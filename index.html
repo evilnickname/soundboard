@@ -5,13 +5,19 @@
 		<title>Soundboard</title>
         <link rel="stylesheet" href="css/soundboard.css" />
 	</head>
-	<body>		
+	<body>
+        <h1>Soundboard</h1>
         <article id="buttons"></article>
-        
-        <select>
-            <option value="cutebutwrong">Two Stupid Dogs</option>
-            <option value="anticipation">Dr. Frank n Further</option>
-        </select>
+        <article>
+            <label for="choosesoundboard">Choose a soundboard</label>
+            <select id="choosesoundboard">
+                <option value="cutebutwrong">Two Stupid Dogs</option>
+                <option value="anticipation">Dr. Frank n Further</option>
+            </select>
+            <small>
+                Sound samples from <cite>Two Stupid Dogs</cite> and <cite>The Rocky Horror Picture Show</cite> used without permission. Copyrights held by their respective owners.
+            </small>
+        </article>
         <script src="script/howler.min.js"></script>
         <script src="script/soundboard.js"></script>
 	</body>
