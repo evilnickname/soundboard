@@ -1,0 +1,17 @@
+{ "sounds" : [
+    {
+        "tag" : "heh",
+        "timing": [0, 1250],
+        "text": "Heheh heh"
+	},
+	{
+		"tag" : "cute",
+		"timing" : [1250, 2000],
+		"text": "Isn't that cute"
+	},
+	{
+		"tag" : "wrong",
+		"timing" : [3250, 2846],
+		"text" : "But it's wrong!"
+	}
+]}

@@ -1,0 +1,22 @@
+{ "sounds" : [
+    {
+        "tag" : "antici",
+        "timing": [0, 2692],
+        "text": "I see you shiver with antici …"
+	}
+	,{
+		"tag" : "3sec",
+		"timing" : [2700, 3000],
+		"text" : "[3 seconds]"
+	}
+	,{
+		"tag" : "pation",
+		"timing" : [5700, 2180],
+		"text" : "… pation"
+	}
+	,{
+		"tag" : "pawhuup",
+		"timing" : [6900, 980],
+		"text" : "[pawhuup]"
+	}
+]}

@@ -1,0 +1,30 @@
+*, *::before, *::after {
+	-moz-box-sizing: border-box; 
+	-webkit-box-sizing: border-box; 
+	box-sizing: border-box;
+}
+
+html {
+    background: /* http://lea.verou.me/css3patterns/#carbon-fibre */
+        radial-gradient(black 15%, transparent 16%) 0 0,
+        radial-gradient(black 15%, transparent 16%) 8px 8px,
+        radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
+        radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
+    background-color:#282828;
+    background-size:16px 16px;
+}
+
+article {
+    padding: .5rem;
+    text-align: center;
+}
+
+button {
+    background: orange;
+    border: none;
+    border-radius: 4px;
+    display: inline-block;
+    margin: .25rem;
+    min-height: 44px;
+    width: 10rem;
+}
