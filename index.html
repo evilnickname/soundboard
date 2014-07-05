@@ -4,25 +4,22 @@
 		<meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width" />
 		<title>Soundboard</title>
-        <link rel="stylesheet" href="css/soundboard.css" />
+        <link rel="stylesheet" href="soundboard.css" />
 	</head>
 	<body>
-        <h1>Soundboard</h1>
-        <article id="buttons"></article>
+        <h1><small>Soundboard</small><span id="title"></span></h1>
+        <article id="board"></article>
         <article>
             <label for="choosesoundboard">Choose a soundboard</label>
-            <select id="choosesoundboard">
-                <option value="cutebutwrong">Two Stupid Dogs</option>
-                <option value="anticipation">Dr. Frank n Further</option>
-            </select>
+            <select id="choosesoundboard"></select>
             <small>
-                Sound samples from <cite>Two Stupid Dogs</cite> and <cite>The Rocky Horror Picture Show</cite> used without permission. Copyrights held by their respective owners.
+                Sound samples from <cite>Two Stupid Dogs</cite> and <cite>The Rocky Horror Picture Show</cite> used without permission. Copyrights held by their respective owners. Soundboard is powered by <a href="https://github.com/goldfire/howler.js">Howler.js</a>.
             </small>
         </article>
         <div class="github">
-            <a href="https://github.com/evilnickname/soundboard">Soundboard on github</a>
+            <a href="https://github.com/evilnickname/soundboard">Soundboard on github</a>     
         </div>
-        <script src="script/howler.min.js"></script>
-        <script src="script/soundboard.js"></script>
+        <script src="assets/howler/howler.min.js"></script>
+        <script src="soundboard.js"></script>
 	</body>
 </html>

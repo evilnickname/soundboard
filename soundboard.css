@@ -2,7 +2,7 @@
 	-moz-box-sizing: border-box; 
 	-webkit-box-sizing: border-box; 
 	box-sizing: border-box;
-    font: 100%/1.25 sans-serif;
+    font-size: 100%;
     margin: 0; 
     padding: 0;
 }
@@ -19,8 +19,8 @@ html {
     background-color:#282828; /* [1] */
     background-size:16px 16px; /* [1] */
     color: #fff;
+    font: 1rem/1.25 sans-serif;
 }
-
 h1 {
     background: #45484d;
     background: linear-gradient(to bottom, #45484d 0%,#000000 100%);
@@ -30,6 +30,14 @@ h1 {
     padding: .5rem;
     text-align: center;
     
+}
+h1 > small {
+    display: block;
+    font-size: .5em;
+}
+
+a {
+    color: #fff;
 }
 article {
     margin: 1rem 0;
@@ -43,6 +51,7 @@ article {
         font-size: .5rem;
         margin: 1rem 0 0;
     }
+
 button {
     background: orange;
     border: none;
@@ -63,6 +72,3 @@ button {
     margin: 2rem 0;
     text-align: center;
 }
-    .github a {
-        color: #fff;
-    }

@@ -1,0 +1,56 @@
+{ "boards" : [
+    {
+        "name" : "Two Stupid Dogs",
+        "files" : [
+            "assets/cutebutwrong/cutebutwrong.mp3",
+            "assets/cutebutwrong/cutebutwrong.ogg"
+        ],
+        "sounds" : [
+            {
+                "tag" : "heh",
+                "timing": [0, 1250],
+                "text": "Heheh heh"
+            }
+            ,{
+                "tag" : "cute",
+                "timing" : [1250, 2000],
+                "text": "Isn't that cute"
+            }
+            ,{
+                "tag" : "wrong",
+                "timing" : [3250, 2846],
+                "text" : "But it's wrong!"
+            }
+        ]
+    },
+    
+    {
+        "name" : "Dr. Frank 'n' Furter",
+        "files" : [
+            "assets/anticipation/anticipation.mp3",
+            "assets/anticipation/anticipation.ogg"
+        ],
+        "sounds" : [
+            {
+                "tag" : "antici",
+                "timing": [0, 2692],
+                "text": "I see you shiver with antici …"
+            }
+            ,{
+                "tag" : "3sec",
+                "timing" : [2700, 3000],
+                "text" : "[3 seconds]"
+            }
+            ,{
+                "tag" : "pation",
+                "timing" : [5700, 2180],
+                "text" : "… pation"
+            }
+            ,{
+                "tag" : "pawhuup",
+                "timing" : [6900, 980],
+                "text" : "[pawhuup]"
+            }
+        ]
+    }
+]}
