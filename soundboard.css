@@ -209,6 +209,7 @@ a {
 	display: none !important;
 }
 
+/* utility classes */
 .error,
 .loading {
 	border-style: solid;

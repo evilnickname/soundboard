@@ -145,7 +145,9 @@ var soundboard = {
 		tryNextFile : function (nothisone) {
 			var urls = soundboard.data.boards[soundboard.currentBoardId].files,
 				notme = urls.indexOf(nothisone);
+			
 			soundboard.sound.urls = urls.splice(notme, 1);
+			
 			if (soundboard.sound.urls > 0) {
 				soundboard.render.board();
 			} else {
