@@ -1,16 +1,25 @@
 *, *::before, *::after {
 	-moz-box-sizing: border-box; 
-	-webkit-box-sizing: border-box; 
 	box-sizing: border-box;
     font-size: 100%;
     margin: 0; 
     padding: 0;
 }
 
+html {
+    background-color: #000;
+    color: #fff;
+    font: 1rem/1.25 sans-serif;
+}
+html, body {
+    height: 100%;
+}
+
+
 /*
  * [1] http://lea.verou.me/css3patterns/#carbon-fibre
  */
-html {
+.soundboard {
     background:
         radial-gradient(black 15%, transparent 16%) 0 0,
         radial-gradient(black 15%, transparent 16%) 8px 8px,
@@ -18,41 +27,96 @@ html {
         radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px; /* [1] */
     background-color:#282828; /* [1] */
     background-size:16px 16px; /* [1] */
-    color: #fff;
-    font: 1rem/1.25 sans-serif;
+    min-height: 100%;
+	position: relative;
+	-webkit-transform: translate3d(0px, 0px, 0px);
+	-ms-transform: translate3d(0px, 0px, 0px);
+	transform: translate3d(0px, 0px, 0px);	
+	transition: all 0.25s ease;
+	width: 100%;
+	z-index: 100;
 }
-h1 {
-    background: #45484d;
-    background: linear-gradient(to bottom, #45484d 0%,#000000 100%);
-    color: #fff;
-    font-size: 2rem;
-    font-weight: bold;
-    padding: .5rem;
-    text-align: center;
-    
+
+	.soundboard:target {
+		box-shadow: -3px 0 3px rgba(0,0,0,0.5);
+		-webkit-transform: translate3d(256px, 0px, 0px);
+		-ms-transform: translate3d(256px, 0px, 0px);
+		transform: translate3d(256px, 0px, 0px);	
+	}
+
+	/* Hide anchor to change target */
+	.soundboard > header:first-child > a:first-of-type {
+	  display: none;
+	}
+	.soundboard:target > header:first-child > a:first-of-type {
+	  display: block;
+	}
+	.soundboard > header:first-child > a:last-of-type {
+	  display: block;
+	}
+	.soundboard:target > header:first-child > a:last-of-type {
+	  display: none;
+	}
+
+.soundboard__header {
+    background: #333;
+    background: linear-gradient(to bottom, #333 75%, #000 100%);
+    box-shadow: 0 2px 3px rgba(128,128,128,0.25);
+    height: 44px;
 }
-h1 > small {
-    display: block;
-    font-size: .5em;
-}
+    .soundboard__gotosidebar {
+        border-right: 1px solid #333;
+        float: left;
+        height: 44px;
+        padding: 12px 0;
+        text-align: center;
+        width: 44px;
+    }
+
+    .soundboard__gotosidebar .icon {
+        font-size: 0;
+    }
+       .icon-menu::after {
+           border-top: 12px double #fff;
+           border-bottom: 4px solid #fff;
+           content: '';
+           display: inline-block;
+           padding-top: 4px;
+           width: 20px;
+          
+       }
+    .soundboard__header > h1 {
+       border-left: 1px solid #0e0e0e;
+        float: left;
+        padding: 4px;
+    }
+    .soundboard__header > h1::before {
+		content: 'soundboard';
+        color: #ccc;
+        display: block;
+        font: normal .75em/1 monospace;
+        
+    }
+
 
 a {
     color: #fff;
 }
-article {
+.soundboard__soundstage {
     margin: 1rem 0;
     padding: .5rem;
     text-align: center;
 }
 
-    article > small {
+    .soundboard__smallprint {
         color: #999;
         display: block;
-        font-size: .5rem;
-        margin: 1rem 0 0;
+        font-size: .75rem;
+        margin: 1rem 0;
+		text-align: center;
     }
 
-button {
+.soundboard__button {
     background: orange;
     border: none;
     border-radius: 4px;
@@ -60,15 +124,87 @@ button {
     margin: .25rem;
     min-height: 44px;
     padding: .25rem .5rem;
-    
     box-shadow: 2px 2px 1px black;
 }
-    button:active {
+    .soundboard__button:active {
         box-shadow: inset 2px 2px 1px rgba(0,0,0,0.25);
-        transform: translate(1px, 1px);
+        -webkit-transform: translate(1px, 1px);
+		transform: translate(1px, 1px);
     }
 
-.github {
+.soundboard__description,
+.soundboard__credits {
+    font-size: .75rem;
     margin: 2rem 0;
     text-align: center;
+}
+.soundboard__description {
+	margin: 1rem;
+}
+	.soundboard__credits:empty,
+	.soundboard__description:empty,
+	.soundboard__smallprint:empty {
+		margin: 0;
+	}
+
+/* Sidebar ******************************************/
+
+/*
+ * [1] http://lea.verou.me/css3patterns/#checkerboard
+ */
+.sidebar {
+	background-color: #eee;
+	background-image: 
+		linear-gradient(45deg, #ccc 25%, transparent 25%, transparent 75%, #ccc 75%, #ccc), 
+		linear-gradient(45deg, #ccc 25%, transparent 25%, transparent 75%, #ccc 75%, #ccc);
+	background-size:20px 20px;
+	background-position:0 0, 10px 10px; /* [1] */	
+	height: 100%;
+	position: absolute; left: 0; top: 0;
+	overflow: hidden;
+	width: 256px;
+}
+
+	.sidebar__header {
+		background: #a7cfdf;
+		background: linear-gradient(to bottom, #a7cfdf 0%,#23538a 100%);
+        border-bottom: 1px solid #063569;
+        color: #fff;
+        height: 44px;
+        padding: 10px;
+        text-shadow: 1px 1px 0 #333;
+    }
+
+	.sidebar__button {
+		background: #23538a;
+		border: none;
+        border-bottom: 1px solid #063569;
+        border-top: 1px solid #0a76a3;
+		color: #fff;
+		cursor: pointer;
+		display: block;
+		line-height: 2rem;
+        padding: 0 10px;
+		text-align: left;
+		width: 100%;
+	}
+		.sidebar__button.active::before {
+			background-image: url('assets/speaker.svg');
+			background-size: 16px 16px;
+			content: '';
+			display: inline-block;
+			height: 16px;
+			margin-right: 5px;
+			vertical-align: text-bottom;
+			width: 16px;
+		}
+		.sidebar__button:hover,
+		.sidebar__button:active {
+			background-color: #093665;
+		}
+
+/* With just one soundboard, there's no need for a sidebar ********/
+.sidebarNotActive .sidebar,
+.sidebarNotActive .soundboard__gotosidebar {
+	display: none !important;
 }

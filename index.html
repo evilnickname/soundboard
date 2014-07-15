@@ -4,21 +4,31 @@
 		<meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width" />
 		<title>Soundboard</title>
-        <link rel="stylesheet" href="soundboard.css" />
-	</head>
+        <link rel="stylesheet" href="soundboard.css">
+    </head>
 	<body>
-        <h1><small>Soundboard</small><span id="title"></span></h1>
-        <article id="board"></article>
-        <article>
-            <label for="choosesoundboard">Choose a soundboard</label>
-            <select id="choosesoundboard"></select>
-            <small>
-                Sound samples from <cite>Two Stupid Dogs</cite> and <cite>The Rocky Horror Picture Show</cite> used without permission. Copyrights held by their respective owners. Soundboard is powered by <a href="https://github.com/goldfire/howler.js">Howler.js</a>.
-            </small>
-        </article>
-        <div class="github">
-            <a href="https://github.com/evilnickname/soundboard">Soundboard on github</a>     
-        </div>
+        <section class="sidebar">
+            <header class="sidebar__header">
+                <h1>Choose a soundboard</h1>
+            </header>
+            <nav id="choosesoundboard"></nav>
+        </section>
+        <section id="soundboard" class="soundboard" role="region">
+            <header class="soundboard__header">
+                <a class="soundboard__gotosidebar" href="#content"><span class="icon icon-menu">hide sidebar</span></a>
+                <a class="soundboard__gotosidebar" href="#soundboard"><span class="icon icon-menu">show sidebar</span></a>
+                <h1><span id="title"></span></h1>
+            </header>
+            <div role="main">
+				<p id="description" class="soundboard__description"></p>
+                <div id="soundstage" class="soundboard__soundstage"></div>
+                <small id="smallprint" class="soundboard__smallprint"></small>
+                <div class="soundboard__credits">
+                    <a href="https://github.com/evilnickname/soundboard">Soundboard on github</a>.  Powered by <a href="https://github.com/goldfire/howler.js">Howler.js</a>.
+                </div>
+            
+            </div>
+        </section>
         <script src="assets/howler/howler.min.js"></script>
         <script src="soundboard.js"></script>
 	</body>
