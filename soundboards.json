@@ -1,6 +1,7 @@
 { "boards" : [
     {
         "name" : "Two Stupid Dogs",
+		"disclaimer" : "<cite>Two Stupid Dogs</cite> © Hanna-Barbera Cartoons. Used without permission.",
         "files" : [
             "assets/cutebutwrong/cutebutwrong.mp3",
             "assets/cutebutwrong/cutebutwrong.ogg"
@@ -26,6 +27,8 @@
     
     {
         "name" : "Dr. Frank 'n' Furter",
+		"description" : "Come on up to the lab, and see what's on the slab …",
+		"disclaimer" : "<cite>The Rocky Horror Picture Show</cite> © Twentieth Century Fox Film Corporation. Used without permission.",
         "files" : [
             "assets/anticipation/anticipation.mp3",
             "assets/anticipation/anticipation.ogg"

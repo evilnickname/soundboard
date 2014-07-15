@@ -33,19 +33,23 @@ var soundboard = {
 
     render : {
         board : function () {
-            var active = soundboard.currentBoardId;
+            var active = soundboard.currentBoardId,
+				activeBoard = soundboard.data.boards[active];
 			soundboard.cleanup('soundstage');
             document.getElementById('soundstage').appendChild(soundboard.render.buttons());
-            soundboard.render.string(
-				'title', soundboard.data.boards[soundboard.currentBoardId].name
+			document.title = activeBoard.name + " — a soundboard"; 
+			soundboard.render.string(
+				'title', activeBoard.name
 			);
 			soundboard.render.html(
-				'smallprint', soundboard.data.boards[soundboard.currentBoardId].disclaimer
+				'smallprint', activeBoard.disclaimer
 			);
 			soundboard.render.html(
-				'description', soundboard.data.boards[soundboard.currentBoardId].description
+				'description', activeBoard.description
 			);
-			document.querySelectorAll('#choosesoundboard button')[active].classList.add('active');
+			if (!document.documentElement.classList.contains('sidebarNotActive')) {
+				document.querySelectorAll('#choosesoundboard button')[active].classList.add('active');
+			}
 		},
 		buttons : function () {
 			var	sounds = soundboard.data.boards[soundboard.currentBoardId].sounds,
@@ -98,7 +102,7 @@ var soundboard = {
 						if (this.classList.contains('active')) { return };
 						soundboard.currentBoardId = this.value;
 						document.querySelector('#choosesoundboard .active').classList.remove('active');
-						soundboard.render.html('soundstage', '<p class="loading">fetching sounds</p>');
+						soundboard.render.html('soundstage', '<p class="loading">fetching data</p>');
 						soundboard.setup.howler();
 					});
 					btns.appendChild(button);
