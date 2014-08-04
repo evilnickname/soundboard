@@ -3,8 +3,9 @@
         "name" : "Two Stupid Dogs",
 		"disclaimer" : "<cite>Two Stupid Dogs</cite> © Hanna-Barbera Cartoons. Used without permission.",
         "files" : [
-            "assets/cutebutwrong/cutebutwrong.mp3",
-            "assets/cutebutwrong/cutebutwrong.ogg"
+            "assets/cutebutwrong/cutebutwrong.opus",
+            "assets/cutebutwrong/cutebutwrong.ogg",
+            "assets/cutebutwrong/cutebutwrong.mp3"
         ],
         "sounds" : [
             {
@@ -30,8 +31,9 @@
 		"description" : "Come on up to the lab, and see what's on the slab …",
 		"disclaimer" : "<cite>The Rocky Horror Picture Show</cite> © Twentieth Century Fox Film Corporation. Used without permission.",
         "files" : [
-            "assets/anticipation/anticipation.mp3",
-            "assets/anticipation/anticipation.ogg"
+            "assets/anticipation/anticipation.opus",
+            "assets/anticipation/anticipation.ogg",
+            "assets/anticipation/anticipation.mp3"
         ],
         "sounds" : [
             {
