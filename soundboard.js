@@ -123,11 +123,11 @@ var soundboard = {
                 urls: soundboard.data.boards[soundboard.currentBoardId].files,
                 sprite: soundboard.setup.sprite(),
 				onload: function () {
-					//console.log('"' + soundboard.sound._src + '" loaded.');
+					console.log('"' + soundboard.sound._src + '" loaded.');
 					soundboard.render.board();
 				},
 				onloaderror: function (e) {
-					//console.log('"' + soundboard.sound._src + '" failed to load.');
+					console.log('"' + soundboard.sound._src + '" failed to load.');
 					soundboard.setup.tryNextFile(soundboard.sound._src);
 				}
             })
@@ -143,13 +143,17 @@ var soundboard = {
 		},
 
 		tryNextFile : function (nothisone) {
-			var urls = soundboard.data.boards[soundboard.currentBoardId].files,
-				notme = urls.indexOf(nothisone);
+			var urls = soundboard.data.boards[soundboard.currentBoardId].files;
 			
-			soundboard.sound.urls = urls.splice(notme, 1);
+			// we're here because the first one doesn't work, so let's move on to the next one.
+			urls.shift();
 			
-			if (soundboard.sound.urls > 0) {
-				soundboard.render.board();
+			// overwrite the old set of files with the new one
+			soundboard.data.boards[soundboard.currentBoardId].files = urls;
+			
+			// and handle them
+			if (soundboard.sound._urls.length > 0) {
+				soundboard.setup.howler();
 			} else {
 				soundboard.render.html('soundstage', '<p class="error">No sound could be loaded.</p>');
 			}
