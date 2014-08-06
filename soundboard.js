@@ -102,7 +102,7 @@ var soundboard = {
 						if (this.classList.contains('active')) { return };
 						soundboard.currentBoardId = this.value;
 						document.querySelector('#choosesoundboard .active').classList.remove('active');
-						soundboard.render.html('soundstage', '<p class="loading">fetching data</p>');
+						soundboard.render.html('soundstage', '<p class="loading"><span class="spinner spinner--small"></span> fetching data</p>');
 						soundboard.setup.howler();
 					});
 					btns.appendChild(button);
