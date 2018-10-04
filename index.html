@@ -2,35 +2,27 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8"/>
-        <meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width" />
 		<title>Soundboard</title>
-        <link rel="stylesheet" href="soundboard.css">
-    </head>
+		<link rel="stylesheet" href="./soundboard.css">
+	</head>
 	<body>
-        <section class="sidebar">
-            <header class="sidebar__header">
-                <h1>Choose a soundboard</h1>
-            </header>
-            <nav id="choosesoundboard"></nav>
-        </section>
-        <section id="soundboard" class="soundboard" role="region">
-            <header class="soundboard__header">
-                <a class="soundboard__gotosidebar" href="#content"><span class="icon icon-menu">hide sidebar</span></a>
-                <a class="soundboard__gotosidebar" href="#soundboard"><span class="icon icon-menu">show sidebar</span></a>
-                <h1><span id="title"></span></h1>
-            </header>
-            <div role="main">
-				<p id="description" class="soundboard__description"></p>
-                <div id="soundstage" class="soundboard__soundstage">
-					<p class="loading"><span class="spinner spinner--small"> </span>fetching data</p>
-				</div>
-                <small id="smallprint" class="soundboard__smallprint"></small>
-                <div class="soundboard__credits">
-                    <a href="https://github.com/evilnickname/soundboard">Soundboard on github</a>.  Powered by <a href="https://github.com/goldfire/howler.js">Howler.js</a>.
-                </div>            
-            </div>
-        </section>
-        <script src="assets/howler/howler.min.js"></script>
-        <script src="soundboard.js"></script>
+		<header>
+			<h1>Soundboard <small>Voor mijn fijne collega’s.</small></h1>
+		</header>
+		<main>
+			%BUTTONS%
+		</main>
+		<footer>
+			<div class="soundboard__credits">
+				<a href="https://github.com/evilnickname/soundboard">Soundboard on github</a>.  Powered by <a href="https://github.com/goldfire/howler.js">Howler.js</a>.
+			</div>
+			<!-- last build: %TIMESTAMP% -->
+		</footer>
+		%HOWLER%
+		<script>
+			window.sbData = %JSON%;
+		</script>
+		<script src="../soundboard.js"></script>
 	</body>
 </html>

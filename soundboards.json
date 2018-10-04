@@ -1,11 +1,12 @@
 { "boards" : [
     {
+        "boardId" : "dogs",
         "name" : "Two Stupid Dogs",
 		"disclaimer" : "<cite>Two Stupid Dogs</cite> © Hanna-Barbera Cartoons. Used without permission.",
-        "files" : [
-            "assets/cutebutwrong/cutebutwrong.opus",
-            "assets/cutebutwrong/cutebutwrong.ogg",
-            "assets/cutebutwrong/cutebutwrong.mp3"
+        "src" : [
+            "cutebutwrong/cutebutwrong.opus",
+            "cutebutwrong/cutebutwrong.ogg",
+            "cutebutwrong/cutebutwrong.mp3"
         ],
         "sounds" : [
             {
@@ -27,13 +28,14 @@
     },
     
     {
+        "boardId" : "frank",
         "name" : "Dr. Frank 'n' Furter",
 		"description" : "Come on up to the lab, and see what's on the slab …",
 		"disclaimer" : "<cite>The Rocky Horror Picture Show</cite> © Twentieth Century Fox Film Corporation. Used without permission.",
-        "files" : [
-            "assets/anticipation/anticipation.opus",
-            "assets/anticipation/anticipation.ogg",
-            "assets/anticipation/anticipation.mp3"
+        "src" : [
+            "anticipation/anticipation.opus",
+            "anticipation/anticipation.ogg",
+            "anticipation/anticipation.mp3"
         ],
         "sounds" : [
             {
