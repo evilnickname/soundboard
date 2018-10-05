@@ -140,7 +140,6 @@ button:hover::before{
     box-shadow: 0 0 2px #1C1C17, 0 0 3px #FF4242;
 }
 
-button:active::before,
 button.is-playing::before {
     background: #FF4F4F;
     box-shadow: 0 0 4px #1C1C17, inset 0 2px 2px 0px #CC0000;

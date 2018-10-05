@@ -41,6 +41,8 @@ const generate = (done) => {
     return JSON.stringify(json);
   }
 
+  gulp.src(['./sw.js'])
+    .pipe(gulp.dest('build/'));
 
   gulp.src('./index.html')
     .pipe(replace('%BUTTONS%', generateButtons))

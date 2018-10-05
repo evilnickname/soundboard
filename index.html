@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 	<head>
-		<meta charset="utf-8"/>
+		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width" />
 		<title>Soundboard</title>
 		<link rel="stylesheet" href="./soundboard.css" inline>
@@ -25,5 +25,12 @@
 			window.sbData = %JSON%;
 		</script>
 		<script src="./soundboard.js" inline></script>
+		<script>
+			if ('serviceWorker' in navigator) {
+				navigator.serviceWorker
+					.register('/sw.js')
+					.then(function () { console.log("Service Worker Registered"); });
+			}
+		</script>
 	</body>
 </html>

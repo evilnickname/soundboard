@@ -58,23 +58,6 @@ var soundboard = (function () {
 		return sprite;
 	}
 
-	function tryNextFile(data, nothisone) {
-		var urls = data.src;
-
-		// we're here because the first one doesn't work, so let's move on to the next one.
-		urls.shift();
-
-		// overwrite the old set of files with the new one
-		data.src = urls;
-
-		// and handle them
-		if (data.src.length > 0) {
-			setupHowler();
-		} else {
-			document.getElementById('soundstage').innerHtml = '<p class="error">No sound could be loaded.</p>';
-		}
-	}
-
 	function getAutoPlay() {
 		var vars = window.location.search.substring(1).split('&');
 		for (var i = 0, n = vars.length; i < n; i++) {
