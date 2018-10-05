@@ -4,7 +4,7 @@
 		<meta charset="utf-8"/>
 		<meta name="viewport" content="width=device-width" />
 		<title>Soundboard</title>
-		<link rel="stylesheet" href="./soundboard.css">
+		<link rel="stylesheet" href="./soundboard.css" inline>
 	</head>
 	<body>
 		<header>
@@ -15,14 +15,15 @@
 		</main>
 		<footer>
 			<div class="soundboard__credits">
-				<a href="https://github.com/evilnickname/soundboard">Soundboard on github</a>.  Powered by <a href="https://github.com/goldfire/howler.js">Howler.js</a>.
+				<a href="https://github.com/evilnickname/soundboard">Soundboard on github</a>. Powered by <a href="https://github.com/goldfire/howler.js">Howler.js</a>.
 			</div>
+			<a class="soundboard__autoplay" id="autoplayurl"></a>
 			<!-- last build: %TIMESTAMP% -->
 		</footer>
-		%HOWLER%
+		<script src="node_modules/howler/dist/howler.core.min.js" inline></script>
 		<script>
 			window.sbData = %JSON%;
 		</script>
-		<script src="../soundboard.js"></script>
+		<script src="./soundboard.js" inline></script>
 	</body>
 </html>

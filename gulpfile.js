@@ -1,25 +1,36 @@
 'use strict';
 
-const gulp = require('gulp'),
-      fs = require('fs'),
-      replace = require('gulp-replace');
+const gulp          = require('gulp'),
+      connect       = require('gulp-connect'),
+      inlinesource  = require('gulp-inline-source'),
+      replace       = require('gulp-replace'),
+      fs            = require('fs');
 
 const json = JSON.parse(fs.readFileSync('./soundboards.json'));
 
-const copyAssets = (done) => {
-  gulp.src(['./assets/**/*', './node_modules/howler/dist/howler.core.min.js'])
+const copy = (done) => {
+  gulp.src(['./assets/**/*'])
     .pipe(gulp.dest('build/'));
 
   done();
-}
+};
 
-const prepareIndex = (done) => {
+const serve = (done) => {
+  connect.server({
+    root: 'build',
+    livereload: true
+  });
+
+  done();
+};
+
+const generate = (done) => {
   let output = '';
   
   function generateButtons () {
       for (let b of json.boards) {  
       for (let s of b.sounds) {
-        output += `<button type="button" class="btn" id="${s.tag}" data-board="${b.boardId}">${s.text}</button>`;
+        output += `<span><button type="button" class="btn" id="${s.tag}" data-board="${b.boardId}">${s.text}</button></span>`;
       }
     }
   
@@ -33,18 +44,21 @@ const prepareIndex = (done) => {
 
   gulp.src('./index.html')
     .pipe(replace('%BUTTONS%', generateButtons))
-    .pipe(replace(/<link rel="stylesheet" href=".\/soundboard.css">/, function() {
-      const style = fs.readFileSync('./soundboard.css', 'utf8');
-      return '<style>\n' + style + '\n</style>';
-    }))
-    .pipe(replace('%HOWLER%', '<script src="howler.core.min.js"></script>'))
     .pipe(replace('%JSON%', jsonAsString))
     .pipe(replace('%TIMESTAMP%', function() {
       return (new Date()).toISOString()
     }))
-    .pipe(gulp.dest('build/'));
+    .pipe(inlinesource())
+    .pipe(gulp.dest('build/'))
+    .pipe(connect.reload());
   
     done();
-}
+};
 
-gulp.task('build', gulp.series(prepareIndex));
+const watch = (done) => {
+  gulp.watch(['./*.css', './*.html', './*.js', './*.json'], generate);
+  done();
+};
+
+gulp.task('build', gulp.series(copy, generate));
+gulp.task('develop', gulp.series(copy, serve, generate, watch));
