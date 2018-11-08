@@ -41,13 +41,13 @@ const generate = (done) => {
     return JSON.stringify(json);
   }
 
-  gulp.src(['./sw.js'])
+  gulp.src(['./sw.js', './manifest.json'])
     .pipe(gulp.dest('build/'));
 
   gulp.src('./index.html')
-    .pipe(replace('%BUTTONS%', generateButtons))
-    .pipe(replace('%JSON%', jsonAsString))
-    .pipe(replace('%TIMESTAMP%', function() {
+    .pipe(replace('{BUTTONS}', generateButtons))
+    .pipe(replace('{JSON}', jsonAsString))
+    .pipe(replace('{TIMESTAMP}', function() {
       return (new Date()).toISOString()
     }))
     .pipe(inlinesource())

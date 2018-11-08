@@ -1,0 +1,21 @@
+{
+    "name": "Soundboard",
+    "short_name": "Soundboard",
+    "description": "A Soundboard for people who *really* need to hear my sweet voice.",
+    "display": "standalone",
+    "start_url": "/",
+    "background_color": "#00263f",
+    "theme_color": "#00263f",
+    "icons": [
+        {
+            "src": "./megaphone.png",
+            "sizes": "256x256",
+            "type": "image/png"
+        },
+        {
+            "src": "./megaphone.svg",
+            "sizes": "48x48 96x96 128x128 192x192 256x256 512x512",
+            "type": "image/svg"
+        }
+    ]
+}

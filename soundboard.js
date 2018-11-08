@@ -31,7 +31,7 @@ var soundboard = (function () {
 	}
 
 	function playSound(e) {
-		if (e.target.type === 'button') {
+		if (e.target.type === 'button[data-sound]') {
 			/* play sound */
 			var board = e.target.dataset.board;
 			var soundId = e.target.id;
