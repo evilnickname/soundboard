@@ -1,311 +1,202 @@
-*, *::before, *::after {
-	-moz-box-sizing: border-box; 
-	box-sizing: border-box;
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
     font-size: 100%;
-    margin: 0; 
+    margin: 0;
     padding: 0;
 }
 
 html {
-    background-color: #000;
+    /* background: http://lea.verou.me/css3patterns/#carbon-fibre */
+    background: radial-gradient(black 15%, transparent 16%) 0 0, radial-gradient(black 15%, transparent 16%) 8px 8px, radial-gradient(rgba(255, 255, 255, .1) 15%, transparent 20%) 0 1px, radial-gradient(rgba(255, 255, 255, .1) 15%, transparent 20%) 8px 9px;
+    background-color: #282828;
+    background-size: 16px 16px;
     color: #fff;
     font: 1rem/1.25 sans-serif;
 }
-html, body {
-    height: 100%;
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-
-/*
- * [1] http://lea.verou.me/css3patterns/#carbon-fibre
- */
-.soundboard {
-    background:
-        radial-gradient(black 15%, transparent 16%) 0 0,
-        radial-gradient(black 15%, transparent 16%) 8px 8px,
-        radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
-        radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px; /* [1] */
-    background-color:#282828; /* [1] */
-    background-size:16px 16px; /* [1] */
-    min-height: 100%;
-	position: relative;
-	-webkit-transform: translate3d(0px, 0px, 0px);
-	-ms-transform: translate3d(0px, 0px, 0px);
-	transform: translate3d(0px, 0px, 0px);	
-	transition: all 0.25s ease;
-	width: 100%;
-	z-index: 100;
+header {
+    box-shadow: 0 3px -3px rgba(0, 0, 0, .5);
+    background: #000;
+    display: flex;
+    padding: 1em 10px;
 }
 
-	.soundboard:target {
-		box-shadow: -3px 0 3px rgba(0,0,0,0.5);
-		-webkit-transform: translate3d(256px, 0px, 0px);
-		-ms-transform: translate3d(256px, 0px, 0px);
-		transform: translate3d(256px, 0px, 0px);	
-	}
-
-	/* Hide anchor to change target */
-	.soundboard > header:first-child > a:first-of-type {
-	  display: none;
-	}
-	.soundboard:target > header:first-child > a:first-of-type {
-	  display: block;
-	}
-	.soundboard > header:first-child > a:last-of-type {
-	  display: block;
-	}
-	.soundboard:target > header:first-child > a:last-of-type {
-	  display: none;
-	}
-
-.soundboard__header {
-    background: #333;
-    background: linear-gradient(to bottom, #333 75%, #000 100%);
-    box-shadow: 0 2px 3px rgba(128,128,128,0.25);
-    height: 44px;
+header h1 {
+    font: 1.5rem/1 monospace;
 }
-    .soundboard__gotosidebar {
-        border-right: 1px solid #333;
-        float: left;
-        height: 44px;
-        padding: 12px 0;
-        text-align: center;
-        width: 44px;
-    }
 
-    .soundboard__gotosidebar .icon {
-        font-size: 0;
+header small {
+    display: block;
+    font: 0.75rem/1 monospace;
+}
+
+header svg {
+    height: 2rem;
+    margin-right: 1rem;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+main > span {
+    flex: 1 1 50%;
+}
+
+main .btn {
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
+    text-align: left;
+}
+
+@media (min-width:544px) {
+    main {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        grid-gap: 10px;
+        margin: 10px 10px auto;
     }
-       .icon-menu::after {
-           border-top: 12px double #fff;
-           border-bottom: 4px solid #fff;
-           content: '';
-           display: inline-block;
-           padding-top: 4px;
-           width: 20px;
-          
-       }
-    .soundboard__header > h1 {
-       border-left: 1px solid #0e0e0e;
-        float: left;
-        padding: 4px;
+    
+    main > span {
+        flex: none;
+        position: relative;
     }
-    .soundboard__header > h1::before {
-		content: 'soundboard';
-        color: #ccc;
+    
+    main > span::before {
+        content: '';
         display: block;
-        font: normal .75em/1 monospace;
-        
+        padding-top: 100%;
     }
 
+    main .btn {
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin: 0;
+        height: 100%;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (min-width: 1220px) {
+    main {
+        margin: 10px auto auto;
+        width: 1200px
+    }
+}
 
 a {
-    color: #fff;
-}
-.soundboard__soundstage {
-    margin: 1rem 0;
-    padding: .5rem;
-    text-align: center;
+    color: white;
 }
 
-    .soundboard__smallprint {
-        color: #999;
-        display: block;
-        font-size: .75rem;
-        margin: 1rem 0;
-		text-align: center;
-    }
-
-.soundboard__button {
-    background: orange;
-    border: none;
-    border-radius: 4px;
-    display: inline-block;
-    margin: .25rem;
-    min-height: 44px;
-    padding: .25rem .5rem;
-    box-shadow: 2px 2px 1px black;
-}
-    .soundboard__button:active {
-        box-shadow: inset 2px 2px 1px rgba(0,0,0,0.25);
-        -webkit-transform: translate(1px, 1px);
-		transform: translate(1px, 1px);
-    }
-
-.soundboard__description,
-.soundboard__credits {
+footer {
+    color: #999;
+    display: block;
     font-size: .75rem;
-    margin: 2rem 0;
+    padding: .75rem;
     text-align: center;
 }
-.soundboard__description {
-	margin: 1rem;
-}
-	.soundboard__credits:empty,
-	.soundboard__description:empty,
-	.soundboard__smallprint:empty {
-		margin: 0;
-	}
 
-/* Sidebar ******************************************/
-
-/*
- * [1] http://lea.verou.me/css3patterns/#checkerboard
- */
-.sidebar {
-	background-color: #eee;
-	background-image: 
-		linear-gradient(45deg, #ccc 25%, transparent 25%, transparent 75%, #ccc 75%, #ccc), 
-		linear-gradient(45deg, #ccc 25%, transparent 25%, transparent 75%, #ccc 75%, #ccc);
-	background-size:20px 20px;
-	background-position:0 0, 10px 10px; /* [1] */	
-	height: 100%;
-	position: absolute; left: 0; top: 0;
-	overflow: hidden;
-	width: 256px;
+.panel {
+    background-color: rgba(255, 255, 255, 0.75);
+    border-radius: 4px;
+    padding: 10px calc(40px + 1ch) 10px 20px;
+    position: fixed;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
-	.sidebar__header {
-		background: #a7cfdf;
-		background: linear-gradient(to bottom, #a7cfdf 0%,#23538a 100%);
-        border-bottom: 1px solid #063569;
-        color: #fff;
-        height: 44px;
-        padding: 10px;
-        text-shadow: 1px 1px 0 #333;
-    }
-
-	.sidebar__button {
-		background: #23538a;
-		border: none;
-        border-bottom: 1px solid #063569;
-        border-top: 1px solid #0a76a3;
-		color: #fff;
-		cursor: pointer;
-		display: block;
-		line-height: 2rem;
-        padding: 0 10px;
-		text-align: left;
-		width: 100%;
-	}
-		.sidebar__button.active::before {
-			background-image: url('assets/speaker.svg');
-			background-size: 16px 16px;
-			content: '';
-			display: inline-block;
-			height: 16px;
-			margin-right: 5px;
-			vertical-align: text-bottom;
-			width: 16px;
-		}
-		.sidebar__button:hover,
-		.sidebar__button:active {
-			background-color: #093665;
-		}
-
-/* With just one soundboard, there's no need for a sidebar ********/
-.sidebarNotActive .sidebar,
-.sidebarNotActive .soundboard__gotosidebar {
-	display: none !important;
+.panel button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font: inherit;
 }
 
-/* utility classes */
-.error,
-.loading {
-	border-style: solid;
-	border-width: 2px;
-	border-radius: 8px;
-	display: inline-block;
-	padding: 1rem;
-	text-align: center;
+.panel button:last-child {
+    padding: 10px;
+    position: absolute;
+    top: 0;
+    right: 0;
 }
 
-.error {
-	background: rgba(192,0,0,0.8);
-	border-color: #c00;
-}
-.loading {
-	background: rgba(255,255,255,0.4);
-	border-color: rgba(255,255,255,0.6);
-	color: #fff;
-}
-
-/* Spinner by Harry Roberts: http://jsfiddle.net/csswizardry/M2D4M/ *****/
 /**
- * A simple, semantic, usable-anywhere spinner. It takes its coloring from its
- * parent element, meaning it can be dropped anywhere without modification.
- *
- * 1. Positioning context.
- * 2. Define dimensions in ems so that we can…
- * 3. …adjust spinner size by just changing its `font-size`.
- * 4. Do not explicitly define a color (allow border to inherit current text
- *    color). This makes the spinner usable on any color background. We’re also
- *    only defining a bottom border here; this is what actually gives the
- *    illusion of something spinning.
- * 5. Kellum method hidden text:
- *    zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement
- */
-.spinner {
-    position: relative; /* [1] */
+* Adapted from KEYS.css: A simple stylesheet for rendering beautiful keyboard-style elements.
+*
+* Author: Michael Hüneburg
+* Website: http://michaelhue.com/keyscss
+* License: MIT License (see LICENSE.txt)
+*/
+
+.btn {
+    background: rgb(250, 250, 250);
+    background: linear-gradient(to top, rgb(210, 210, 210), rgb(255, 255, 255));
+    border: none;
+    border-radius: .3em;
+    box-shadow: inset 0 0 1px rgb(255, 255, 255), inset 0 0 .4em rgb(200, 200, 200), 0 .1em 0 rgb(130, 130, 130), 0 .11em 0 rgba(0, 0, 0, .4), 0 .1em .11em rgba(0, 0, 0, .9);
+    color: rgb(50, 50, 50);
+    cursor: default;
     display: inline-block;
-    width:  1em; /* [2] */
-    height: 1em; /* [2] */
-    font-size: 32px; /* [3] */
-    border-bottom: 1px solid; /* [4] */
-    vertical-align: middle;
-    overflow: hidden;  /* [5] */
-    text-indent: 100%; /* [5] */
-    -webkit-animation: 0.5s spinner linear infinite;
-       -moz-animation: 0.5s spinner linear infinite;
-            animation: 0.5s spinner linear infinite;
-}
-    /**
-     * 1. Make the spinner a circle.
-     */
-.spinner,
-.spinner:after {
-   border-radius: 100%; /* [1] */
+    font: normal .85em/1 'Lucida Grande', Lucida, Arial, sans-serif;
+    margin: 5px;
+    min-width: 1em;
+    outline: 0;
+    padding: 1em;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-shadow: 0 0 2px rgb(255, 255, 255);
+    transform: translate(0, 0);
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
 }
 
-/**
- * The (optically) non-spinning part of the spinner.
- *
- * 1. Border around entire element fills in the rest of the ring.
- * 2. Paler than the part that appears to spin.
- */        
-.spinner:after {
-	content: "";
-	position: absolute;
-	top:    0;
-	right:  0;
-	bottom: 0;
-	left:   0;
-	border: 1px solid; /* [1] */
-	opacity: 0.5; /* [2] */
+.btn:active {
+    box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.25);
+    outline: 0;
+    transition: 100ms all;
+    transform: translate(1px, 1px);
 }
 
-
-/**
- * Size variants (built by adjusting `font-size`).
- */
-.spinner--small { font-size: 16px; }
-.spinner--large { font-size: 64px; }
-
-/**
- * Color overrides.
- */
-.spinner--light { color: #fff; }
-.spinner--dark  { color: #333; }
-
-
-@-webkit-keyframes spinner {
-	to { -webkit-transform: rotate(360deg); }
+.btn:focus,
+.btn.is-playing {
+    background: linear-gradient(to top, #fffee0, #fffef0);
+    outline: 0;
 }
 
-@-moz-keyframes spinner {
-	to { -moz-transform: rotate(360deg); }
+/* https://www.bypeople.com/active-led-css-button/ */
+
+.btn::before {
+    position: absolute;
+    content: '';
+    right: 5px;
+    top: 5px;
+    width: 8px;
+    height: 8px;
+    background: #646464;
+    background-image: radial-gradient(top, #616161 0%, #616161 20%, #535353 60%);
+    border-radius: 50%;
+    box-shadow: 0 0 2px #1C1C17;
+    transition: all .3s ease;
 }
 
-@keyframes spinner {
-	to { transform: rotate(360deg); }
+.btn:hover::before {
+    background: #FF4F4F;
+    box-shadow: 0 0 2px #1C1C17, 0 0 3px #FF4242;
+}
+
+.btn.is-playing::before {
+    background: #FF4F4F;
+    box-shadow: 0 0 4px #1C1C17, inset 0 2px 2px 0px #CC0000;
 }

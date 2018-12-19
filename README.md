@@ -1,9 +1,8 @@
 Soundboard
 ==========
 
-Once upon a time, I had a brilliant idea. Now I have a soundboard.
+Once upon a time, my former colleague Jorijn told me that she was gonne miss my lovely voice when I’d quit my job. So I made this soundboard.
 
-[Soundboard demo](http://evilnickname.github.io/soundboard/)
+[Soundboard](https://soundboard.evilnickname.org/)
 
-TODO:
-- Documentation. Obviously.
+PWA, offline first, Service Workers, Gulp, the works. Uses [Howler.js](https://github.com/goldfire/howler.js).

@@ -1,0 +1,28 @@
+{
+  "name": "soundboard",
+  "version": "2.0.0",
+  "description": "Soundboard",
+  "main": "/",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/evilnickname/soundboard.git"
+  },
+  "author": "evilnickname+soundboard@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/evilnickname/soundboard/issues"
+  },
+  "homepage": "https://github.com/evilnickname/soundboard#readme",
+  "dependencies": {
+    "howler": "^2.0.15"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.0",
+    "gulp-connect": "^5.6.1",
+    "gulp-inline-source": "^3.2.0",
+    "gulp-replace": "^1.0.0"
+  }
+}

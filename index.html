@@ -1,36 +1,44 @@
 <!doctype html>
-<html lang="en">
+<html lang="nl">
 	<head>
-		<meta charset="utf-8"/>
-        <meta name="viewport" content="width=device-width" />
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
 		<title>Soundboard</title>
-        <link rel="stylesheet" href="soundboard.css">
-    </head>
+		<link rel="stylesheet" href="./soundboard.css" inline>
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+		<link rel="manifest" href="/soundboard.webmanifest">
+		<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="theme-color" content="#00263f">
+		<meta name="description" content="Een soundboard voor wie *echt* niet zonder mijn innemende stemgeluid kan.">
+	</head>
 	<body>
-        <section class="sidebar">
-            <header class="sidebar__header">
-                <h1>Choose a soundboard</h1>
-            </header>
-            <nav id="choosesoundboard"></nav>
-        </section>
-        <section id="soundboard" class="soundboard" role="region">
-            <header class="soundboard__header">
-                <a class="soundboard__gotosidebar" href="#content"><span class="icon icon-menu">hide sidebar</span></a>
-                <a class="soundboard__gotosidebar" href="#soundboard"><span class="icon icon-menu">show sidebar</span></a>
-                <h1><span id="title"></span></h1>
-            </header>
-            <div role="main">
-				<p id="description" class="soundboard__description"></p>
-                <div id="soundstage" class="soundboard__soundstage">
-					<p class="loading"><span class="spinner spinner--small"> </span>fetching data</p>
-				</div>
-                <small id="smallprint" class="soundboard__smallprint"></small>
-                <div class="soundboard__credits">
-                    <a href="https://github.com/evilnickname/soundboard">Soundboard on github</a>.  Powered by <a href="https://github.com/goldfire/howler.js">Howler.js</a>.
-                </div>            
-            </div>
-        </section>
-        <script src="assets/howler/howler.min.js"></script>
-        <script src="soundboard.js"></script>
+		<header>
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-hidden="true"><circle cx="256" cy="256" r="256" fill="#005c83"/><path fill="#00263f" d="M512 256c0-1.167-.029-2.326-.044-3.489l-76.457-76.983-.37.572-52.324-52.041-19.309 32.332-56.79-56.79-24.801 99.568L91.854 351.762 252.042 511.95c1.319.02 2.635.05 3.958.05 141.385 0 256-114.615 256-256z"/><path fill="#ae4e32" d="M260.985 406.702l-62.899 21.228-44.254-126.501 62.9-21.229z"/><path fill="#fff" d="M391.053 340.709s-147.968-40.769-247.807-5.843l-26.665-76.223C216.42 223.717 306.706 99.6 306.706 99.6l84.347 241.109z"/><path fill="#e0e0e0" d="M132.753 304.872l10.493 29.995c99.84-34.927 247.808 5.843 247.808 5.843l-42.635-121.875-215.666 86.037z"/><path fill="#ff6838" d="M306.706 99.6s-11.298 15.526-30.305 37.131l67.809 193.835c28.33 5.046 46.844 10.143 46.844 10.143L306.706 99.6z"/><path fill="#ae4e32" d="M310.425 233.991l33.785 96.575c28.33 5.046 46.844 10.143 46.844 10.143l-42.635-121.875-37.994 15.157z"/><path fill="#ff6838" d="M91.854 351.762l51.392-16.895-26.665-76.223-51.055 17.86z"/><path fill="#ae4e32" d="M82.468 324.933l9.386 26.829 51.392-16.895-10.493-29.995z"/><path fill="#ffdc00" d="M377.3 221.932l-7.81-18.412 65.998-27.995 7.81 18.412z"/><path fill="#ffc000" d="M443.31 193.939l-4.388-10.344-66.198 27.532 4.586 10.812z"/><path fill="#ffdc00" d="M359.67 177.143l-18.334-7.992 23.141-53.088 18.334 7.992z"/><path fill="#ffc000" d="M437.045 284.814l-56.287-13.597 4.696-19.44 56.287 13.598z"/></svg>
+			<h1>Soundboard <small>Voor wie <em>echt</em> niet zonder mijn innemende stemgeluid kan.</small></h1>
+		</header>
+		<main>
+			{BUTTONS}
+		</main>
+		<footer lang="en">
+			<div class="soundboard__credits">
+				<a href="https://github.com/evilnickname/soundboard">Soundboard on github</a>. Powered by <a href="https://github.com/goldfire/howler.js">Howler.js</a>. <a href="https://www.flaticon.com/free-icon/megaphone_630757">Icon</a> by <a href="http://www.freepik.com/">Freepik</a>.
+			</div>
+			<a class="soundboard__autoplay" id="autoplayurl"></a>
+			<!-- last build: {TIMESTAMP} -->
+		</footer>
+		<div id="pwa-actions" class="panel" lang="en" hidden>
+			<button type="button" id="install">Add this soundboard to your homescreen.</button>
+			<button type="button" id="update" hidden>There is a new version of this soundboard. Update now!</button>
+			<button type="button" id="dismiss">&times;</button>
+		</div>
+		<script src="node_modules/howler/dist/howler.core.min.js" inline></script>
+		<script>
+			window.sbData = {JSON};
+		</script>
+		<script src="./soundboard.js" inline></script>
+		<script src="./pwa.js" inline></script>
 	</body>
 </html>
