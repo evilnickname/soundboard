@@ -2,7 +2,7 @@
   "name": "soundboard",
   "version": "2.0.0",
   "description": "Soundboard",
-  "main": "soundboard.js",
+  "main": "/",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/evilnickname/soundboard#readme",
   "dependencies": {
-    "howler": "^2.0.14"
+    "howler": "^2.0.15"
   },
   "devDependencies": {
     "gulp": "^4.0.0",

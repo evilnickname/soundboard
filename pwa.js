@@ -2,9 +2,13 @@ var deferredPrompt,
     panel = document.getElementById('pwa-actions');
 
 if ('serviceWorker' in navigator) {
-    navigator.serviceWorker
-        .register('/sw.js')
-        .then(function () { console.log("Service Worker Registered"); });
+    navigator.serviceWorker.register('./sw.js')
+    .then(function (registration) {
+        console.log('Registered:', registration);
+    })
+    .catch(function (error) {
+        console.log('Registration failed: ', error);
+    });
 }
 
 window.addEventListener('beforeinstallprompt', function (e) {
@@ -19,7 +23,7 @@ document.getElementById('install').addEventListener('click', function (e) {
 
     // Wait for the user to respond to the prompt
     deferredPrompt.userChoice
-        .then(function(choiceResult) {
+        .then(function (choiceResult) {
             if (choiceResult.outcome === 'accepted') {
                 console.log('User accepted the A2HS prompt');
             } else {
@@ -33,10 +37,10 @@ document.getElementById('install').addEventListener('click', function (e) {
 
 document.getElementById('dismiss').addEventListener('click', hidePanel);
 
-function hidePanel () {
+function hidePanel() {
     panel.setAttribute('hidden', true);
 }
 
-function showPanel () {
+function showPanel() {
     panel.removeAttribute('hidden');
 }

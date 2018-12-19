@@ -23,7 +23,7 @@ body {
 }
 
 header {
-    box-shadow: 0 3px -3px rgba(0,0,0,.5);
+    box-shadow: 0 3px -3px rgba(0, 0, 0, .5);
     background: #000;
     display: flex;
     padding: 1em 0;
@@ -89,29 +89,28 @@ footer {
 }
 
 .panel {
-    background-color: rgba(255,255,255,0.75);
+    background-color: rgba(255, 255, 255, 0.75);
     border-radius: 4px;
     padding: 10px calc(40px + 1ch) 10px 20px;
     position: fixed;
     bottom: 50px;
     left: 50%;
     transform: translateX(-50%);
-  }
-  
-  .panel button {
+}
+
+.panel button {
     background-color: transparent;
     border: none;
     cursor: pointer;
     font: inherit;
-  }
-  
-  .panel button:last-child {
+}
+
+.panel button:last-child {
     padding: 10px;
     position: absolute;
     top: 0;
     right: 0;
-      
-  }
+}
 
 /**
 * Adapted from KEYS.css: A simple stylesheet for rendering beautiful keyboard-style elements.
@@ -123,7 +122,7 @@ footer {
 
 .btn {
     background: rgb(250, 250, 250);
-    background: linear-gradient(top, rgb(210, 210, 210), rgb(255, 255, 255));
+    background: linear-gradient(to top, rgb(210, 210, 210), rgb(255, 255, 255));
     border: none;
     border-radius: .3em;
     box-shadow: inset 0 0 1px rgb(255, 255, 255), inset 0 0 .4em rgb(200, 200, 200), 0 .1em 0 rgb(130, 130, 130), 0 .11em 0 rgba(0, 0, 0, .4), 0 .1em .11em rgba(0, 0, 0, .9);
@@ -133,6 +132,7 @@ footer {
     font: normal .85em/1 'Lucida Grande', Lucida, Arial, sans-serif;
     margin: 0 .25em .75em 0;
     min-width: 1em;
+    outline: 0;
     padding: .5em .4em;
     text-align: center;
     text-decoration: none;
@@ -150,8 +150,14 @@ footer {
     transform: translate(1px, 1px);
 }
 
+.btn:focus,
+.btn.is-playing {
+    background: linear-gradient(to top, #fffee0, #fffef0);
+}
+
 /* https://www.bypeople.com/active-led-css-button/ */
-.btn::before{
+
+.btn::before {
     position: absolute;
     content: '';
     right: 5px;
@@ -165,7 +171,7 @@ footer {
     transition: all .3s ease;
 }
 
-.btn:hover::before{
+.btn:hover::before {
     background: #FF4F4F;
     box-shadow: 0 0 2px #1C1C17, 0 0 3px #FF4242;
 }

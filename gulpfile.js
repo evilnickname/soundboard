@@ -30,7 +30,7 @@ const generate = (done) => {
   function generateButtons () {
       for (let b of json.boards) {  
       for (let s of b.sounds) {
-        output += `<span><button type="button" class="btn" id="${s.tag}" data-board="${b.boardId}">${s.text}</button></span>`;
+        output += `<span><button type="button" class="btn btn--play" id="${s.tag}" data-board="${b.boardId}">${s.text}</button></span>`;
       }
     }
   
@@ -41,7 +41,7 @@ const generate = (done) => {
     return JSON.stringify(json);
   }
 
-  gulp.src(['./sw.js', './manifest.json'])
+  gulp.src(['./sw.js', './soundboard.webmanifest'])
     .pipe(gulp.dest('build/'));
 
   gulp.src('./index.html')

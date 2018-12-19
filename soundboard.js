@@ -12,26 +12,26 @@ var soundboard = (function () {
 				onload: function () {
 					document.documentElement.addEventListener('click', playSound, false);
 				},
-				onloaderror: function () {
-					tryNextFile(board, sound._src);
-				},
 				onend: function() {
-					document.querySelector('.is-playing').classList.remove('is-playing');
+					var nowPlaying = document.querySelector('.is-playing');
+					if (nowPlaying) {
+						nowPlaying.classList.remove('is-playing');
+					}
 				}
 			});
 		}
 
 		if (autoplay) {
-			var button = document.querySelector('button[data-sound=' + autoplay + ']');
+			var button = document.getElementById(autoplay);
 			if (button) {
-				sound[button.parentElement.dataset.boardId].play(autoplay);
+				sound[button.dataset.board].play(autoplay);
 				//a('send', 'event', 'autoplay', button.textContent);
 			}
 		}
 	}
 
 	function playSound(e) {
-		if (e.target.type === 'button[data-sound]') {
+		if (e.target.type === 'button' && e.target.classList.contains('btn--play')) {
 			/* play sound */
 			var board = e.target.dataset.board;
 			var soundId = e.target.id;
