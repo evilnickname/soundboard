@@ -1,6 +1,6 @@
 /* https://developers.google.com/web/ilt/pwa/offline-quickstart */
 
-var CACHE = 'soundboard-cache';
+var CACHE = 'evilnickname-soundboard-cache';
 var urlsToCache = [
     '.',
     'index.html',

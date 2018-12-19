@@ -26,12 +26,11 @@ header {
     box-shadow: 0 3px -3px rgba(0, 0, 0, .5);
     background: #000;
     display: flex;
-    padding: 1em 0;
+    padding: 1em 10px;
 }
 
 header h1 {
     font: 1.5rem/1 monospace;
-    margin: 0 auto;
 }
 
 header small {
@@ -40,39 +39,59 @@ header small {
 }
 
 header svg {
-    height: 3rem;
-    margin: 0 0.5rem;
+    height: 2rem;
+    margin-right: 1rem;
 }
 
 main {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-    grid-gap: 10px;
-    margin: 10px 10px auto;
-    max-width: 960px;
+    display: flex;
+    flex-wrap: wrap;
 }
 
-main>span {
-    position: relative;
+main > span {
+    flex: 1 1 50%;
 }
 
-main>span::before {
-    content: '';
-    display: block;
-    padding-top: 100%;
+main .btn {
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
+    text-align: left;
 }
 
-main>span>button {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
+@media (min-width:544px) {
+    main {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        grid-gap: 10px;
+        margin: 10px 10px auto;
+    }
+    
+    main > span {
+        flex: none;
+        position: relative;
+    }
+    
+    main > span::before {
+        content: '';
+        display: block;
+        padding-top: 100%;
+    }
+
+    main .btn {
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin: 0;
+        height: 100%;
+        width: 100%;
+        text-align: center;
+    }
 }
 
-@media (min-width: 980px) {
+@media (min-width: 1220px) {
     main {
         margin: 10px auto auto;
+        width: 1200px
     }
 }
 
@@ -130,11 +149,10 @@ footer {
     cursor: default;
     display: inline-block;
     font: normal .85em/1 'Lucida Grande', Lucida, Arial, sans-serif;
-    margin: 0 .25em .75em 0;
+    margin: 5px;
     min-width: 1em;
     outline: 0;
-    padding: .5em .4em;
-    text-align: center;
+    padding: 1em;
     text-decoration: none;
     text-transform: uppercase;
     text-shadow: 0 0 2px rgb(255, 255, 255);
@@ -145,14 +163,16 @@ footer {
 }
 
 .btn:active {
-    transition: 100ms all;
     box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.25);
+    outline: 0;
+    transition: 100ms all;
     transform: translate(1px, 1px);
 }
 
 .btn:focus,
 .btn.is-playing {
     background: linear-gradient(to top, #fffee0, #fffef0);
+    outline: 0;
 }
 
 /* https://www.bypeople.com/active-led-css-button/ */

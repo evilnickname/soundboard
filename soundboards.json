@@ -1,63 +1,356 @@
-{ "boards" : [
-    {
-        "boardId" : "dogs",
-        "name" : "Two Stupid Dogs",
-		"disclaimer" : "<cite>Two Stupid Dogs</cite> © Hanna-Barbera Cartoons. Used without permission.",
-        "src" : [
-            "cutebutwrong/cutebutwrong.opus",
-            "cutebutwrong/cutebutwrong.ogg",
-            "cutebutwrong/cutebutwrong.mp3"
-        ],
-        "sounds" : [
-            {
-                "tag" : "heh",
-                "timing": [0, 1250],
-                "text": "Heheh heh"
-            }
-            ,{
-                "tag" : "cute",
-                "timing" : [1250, 2000],
-                "text": "Isn't that cute"
-            }
-            ,{
-                "tag" : "wrong",
-                "timing" : [3250, 2846],
-                "text" : "But it's wrong!"
-            }
-        ]
-    },
-    
-    {
-        "boardId" : "frank",
-        "name" : "Dr. Frank 'n' Furter",
-		"description" : "Come on up to the lab, and see what's on the slab …",
-		"disclaimer" : "<cite>The Rocky Horror Picture Show</cite> © Twentieth Century Fox Film Corporation. Used without permission.",
-        "src" : [
-            "anticipation/anticipation.opus",
-            "anticipation/anticipation.ogg",
-            "anticipation/anticipation.mp3"
-        ],
-        "sounds" : [
-            {
-                "tag" : "antici",
-                "timing": [0, 2692],
-                "text": "I see you shiver with antici …"
-            }
-            ,{
-                "tag" : "3sec",
-                "timing" : [2700, 3000],
-                "text" : "[3 seconds]"
-            }
-            ,{
-                "tag" : "pation",
-                "timing" : [5700, 2180],
-                "text" : "… pation"
-            }
-            ,{
-                "tag" : "pawhuup",
-                "timing" : [6900, 980],
-                "text" : "[pawhuup]"
-            }
-        ]
-    }
-]}
+{
+    "boards": [
+        {
+            "boardId": "wings",
+            "name": "Gevleugelde uitspraken™",
+            "src": [
+                "wings.ogg",
+                "wings.mp3"
+            ],
+            "sounds": [
+                {
+                    "tag": "ohai",
+                    "text": "Ohai!",
+                    "timing": [
+                        0,
+                        693
+                    ]
+                },
+                {
+                    "tag": "veto",
+                    "text": "Veto",
+                    "timing": [
+                        1000,
+                        856
+                    ]
+                },
+                {
+                    "tag": "plus1",
+                    "text": "Plus één",
+                    "timing": [
+                        2000,
+                        648
+                    ]
+                },
+                {
+                    "tag": "min1",
+                    "text": "Min één",
+                    "timing": [
+                        3000,
+                        693
+                    ]
+                },
+                {
+                    "tag": "awesome",
+                    "text": "Awesome!",
+                    "timing": [
+                        4000,
+                        629
+                    ]
+                },
+                {
+                    "tag": "irrelevant",
+                    "text": "Irrelevant",
+                    "timing": [
+                        5000,
+                        771
+                    ]
+                },
+                {
+                    "tag": "ja1",
+                    "text": "Ja",
+                    "timing": [
+                        6000,
+                        343
+                    ]
+                },
+                {
+                    "tag": "dikkedoei",
+                    "text": "Dikke doei",
+                    "timing": [
+                        7000,
+                        544
+                    ]
+                },
+                {
+                    "tag": "echt",
+                    "text": "Echt",
+                    "timing": [
+                        8000,
+                        721
+                    ]
+                },
+                {
+                    "tag": "baardvandeprofeet",
+                    "text": "Bij de baard van een profeet naar keuze!",
+                    "timing": [
+                        9000,
+                        2828
+                    ]
+                },
+                {
+                    "tag": "naargemaakt",
+                    "text": "Dan zal je het er wel naar gemaakt hebben",
+                    "timing": [
+                        12000,
+                        1379
+                    ]
+                },
+                {
+                    "tag": "hardop",
+                    "text": "O, dat zei ik hardop …",
+                    "timing": [
+                        14000,
+                        1706
+                    ]
+                },
+                {
+                    "tag": "mening",
+                    "text": "Ik heb er wel een mening over, maar die hou ik voor me",
+                    "timing": [
+                        16000,
+                        1851
+                    ]
+                },
+                {
+                    "tag": "sorry",
+                    "text": "Ik zou sorry zeggen, maar ik zou er niets van menen",
+                    "timing": [
+                        18000,
+                        1893
+                    ]
+                },
+                {
+                    "tag": "competentie",
+                    "text": "Competentie is een keuze",
+                    "timing": [
+                        20000,
+                        1088
+                    ]
+                }
+            ]
+        },
+        {
+            "boardId": "wings2",
+            "name": "Meer gevleugelde uitspraken™",
+            "description": "Ook voor mijn fijne collega’s.",
+            "src": [
+                "wings2.ogg",
+                "wings2.mp3"
+            ],
+            "sounds": [
+                {
+                    "tag": "kleinekindjejezus",
+                    "text": "Het kleine kindje Jezus wordt hier heel verdrietig van",
+                    "timing": [
+                        0,
+                        2000
+                    ]
+                },
+                {
+                    "tag": "kleinekindjejezusextended",
+                    "text": "Het kleine kindje Jezus (extended version)",
+                    "timing": [
+                        0,
+                        4700
+                    ]
+                },
+                {
+                    "tag": "whocraps",
+                    "text": "Who craps a give?",
+                    "timing": [
+                        5000,
+                        930
+                    ]
+                },
+                {
+                    "tag": "fuckdieshit",
+                    "text": "Fuck die shit",
+                    "timing": [
+                        6555,
+                        800
+                    ]
+                },
+                {
+                    "tag": "duurtlang",
+                    "text": "Duurt lang",
+                    "timing": [
+                        8020,
+                        530
+                    ]
+                },
+                {
+                    "tag": "dus",
+                    "text": "Dus",
+                    "timing": [
+                        9000,
+                        450
+                    ]
+                },
+                {
+                    "tag": "grappingwantwaar",
+                    "text": "Grappig want het is waar",
+                    "timing": [
+                        9825,
+                        1750
+                    ]
+                },
+                {
+                    "tag": "slechtegrappen",
+                    "text": "Slechte grappen, ik hou ervan",
+                    "timing": [
+                        12000,
+                        1650
+                    ]
+                },
+                {
+                    "tag": "geenidee",
+                    "text": "Ik snap niet wat je bedoelt – maar het antwoord is nee",
+                    "timing": [
+                        14000,
+                        2400
+                    ]
+                },
+                {
+                    "tag": "ja2",
+                    "text": "Ja …",
+                    "timing": [
+                        16980,
+                        610
+                    ]
+                },
+                {
+                    "tag": "haha",
+                    "text": "Ha-ha",
+                    "timing": [
+                        18040,
+                        600
+                    ]
+                },
+                {
+                    "tag": "bennietblij",
+                    "text": "Ik kijk wel vrolijk, maar ik ben niet blij",
+                    "timing": [
+                        19090,
+                        1670
+                    ]
+                },
+                {
+                    "tag": "stukjesspek",
+                    "text": "Een fijne voort&shy;zetting en een aangenaam etensmaal …",
+                    "timing": [
+                        21040,
+                        4000
+                    ]
+                },
+                {
+                    "tag": "funnycuztrue",
+                    "text": "Funny ‘cause it’s true",
+                    "timing": [
+                        27000,
+                        1150
+                    ]
+                },
+                {
+                    "tag": "alswaardanzeggen",
+                    "text": "Als het waar is mag het gezegd worden",
+                    "timing": [
+                        28500,
+                        1500
+                    ]
+                },
+                {
+                    "tag": "f19",
+                    "text": "F19",
+                    "timing": [
+                        29950,
+                        1120
+                    ]
+                },
+                {
+                    "tag": "uitfaseren",
+                    "text": "Uitfaseren",
+                    "timing": [
+                        31100,
+                        900
+                    ]
+                },
+                {
+                    "tag": "komopnouzeghee",
+                    "text": "Komopnou&shy;zeghee",
+                    "timing": [
+                        32125,
+                        1300
+                    ]
+                }
+            ]
+        },
+        {
+            "boardId": "filosofen",
+            "name": "Zoals de grote filosoof …",
+            "description": "",
+            "src": [
+                "filosofen.ogg",
+                "filosofen.mp3"
+            ],
+            "sounds": [
+                {
+                    "tag": "koosalberts",
+                    "text": "Koos Alberts",
+                    "timing": [
+                        0,
+                        4500
+                    ]
+                },
+                {
+                    "tag": "tommie",
+                    "text": "Tommie",
+                    "timing": [
+                        5115,
+                        2711
+                    ]
+                },
+                {
+                    "tag": "dusty",
+                    "text": "Dusty Springfield",
+                    "timing": [
+                        9000,
+                        6000
+                    ]
+                },
+                {
+                    "tag": "kaandorp",
+                    "text": "Brigitte Kaandorp",
+                    "timing": [
+                        16000,
+                        5500
+                    ]
+                },
+                {
+                    "tag": "ramones",
+                    "text": "Joey Ramone",
+                    "timing": [
+                        22000,
+                        3700
+                    ]
+                },
+                {
+                    "tag": "frankboeijen",
+                    "text": "Frank Boeijen",
+                    "timing": [
+                        27100,
+                        3700
+                    ]
+                },
+                {
+                    "tag": "doemaar",
+                    "text": "Doe Maar",
+                    "timing": [
+                        31000,
+                        3900
+                    ]
+                }
+            ]
+        }
+    ]
+}
